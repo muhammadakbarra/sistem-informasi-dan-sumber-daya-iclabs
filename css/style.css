@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+
+  .container {
+    background-image: url(/sistem-informasi-dan-sumber-daya-iclabs/images/home_mainPhoto.png);
+    background-repeat: no-repeat;
+    size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    margin: 25px 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(227, 212, 221);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #51A8B1;
+    font-family: "Montserrat", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+
+  }
+  nav ul li a:hover {
+    color : #0E646C;
+  }
+  
+  .toggle-menu {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+  }
+  .toggle-menu input {
+    position: absolute;
+    opacity: 0;
+    width: 50px;
+    height: 28px;
+    left: -7px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  /* animation burger */
+  .toggle-menu span:nth-child(2) {
+    transform-origin: 0 0;
+    transition: all 0.5s;
+  }
+  .toggle-menu input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-2px, -2px);
+    background-color: white;
+  }
+  .toggle-menu span:nth-child(4) {
+    transition: all 0.5s;
+    transform-origin: 0 100%;
+  }
+  .toggle-menu input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(0px, 0px);
+  }
+  .toggle-menu input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .toggle-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(227, 212, 221);
+    border-radius: 3px;
+  }
+  
+  /* layar tbalet */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      width: 50%;
+    }
+  }
+  /* ukuran mobile */
+  @media screen and (max-width: 576px) {
+    nav ul {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 70%;
+      flex-direction: column;
+      background-color: black;
+      justify-content: space-evenly;
+      height: 100vh;
+      align-items: center;
+      z-index: -1;
+      background-color: rgb(240, 12, 157);
+      transform: translateX(100%);
+      transition: all 0.5s;
+      opacity: 0;
+    }
+    .toggle-menu {
+      display: flex;
+    }
+    nav ul.slide {
+      transform: translateX(0);
+      transition: all 0.5s;
+      opacity: 1;
+    }
+  }
