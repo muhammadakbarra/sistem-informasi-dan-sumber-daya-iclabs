@@ -11,11 +11,10 @@
     background-image: url(/sistem-informasi-dan-sumber-daya-iclabs/images/home_mainPhoto.png);
     background-repeat: no-repeat;
     size: cover;
-    background-position: center;
     min-height: 100vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
+
   }
 
   nav {
