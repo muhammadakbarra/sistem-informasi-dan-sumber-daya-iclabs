@@ -1,181 +1,258 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: sans-serif;
-    overflow-x: hidden;
-  }
-  /* style image backgroud */
-
-  .container{
-    position: relative;
-    background-image: url(/sistem-informasi-dan-sumber-daya-iclabs/images/home_mainPhoto.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    
-       
-    
+  margin: 0;
+  padding: 0;
 }
-.container::before {
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  background-image: url(/sistem-informasi-dan-sumber-daya-iclabs/images/home_mainPhoto.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.image-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(
+    to top, 
+    rgba(81, 168, 177, 1) 10% 25%, 
+    rgba(81, 168, 177, 0) 100%
+);
+z-index: 1;
+}
+
+nav {
+  margin: 25px 20px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  color: rgb(227, 212, 221);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: inset -5px -5px 10px 5px #a7a6a688;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #51A8B1;
+  font-family: "Montserrat", sans-serif;
+  font-size: larger;
+  font-weight: bold;
+
+}
+nav ul li a:hover {
+  color : #0E646C;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 40%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: white; 
+  z-index: 2; 
+}
+
+
+.text-overlay h1 {
+  font-size: 5em; 
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-overlay p {
+  font-size: 1.7em;
+  margin-top: 10px;
+}
+section{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+section::before{
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 123, 255, 0.2);
-  z-index: 1;
-  justify-content: center;
-}
-  * Teks di atas gambar dan overlay */
-.hero-text {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-    max-width: 80%;
+  background: #51A8B1;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform: scaleX(1.5);
+  box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hero-text h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    color: #f1f1f1;
-}
-
-.hero-text p {
-    font-size: 18px;
-    color: #f1f1f1;
-}
-
-.navbar {
-    background-color: white;
-    overflow: hidden;
-  }/* Teks dan konten di atas gambar dan overlay */
-.container > * {
+.toggle-menu {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
   position: relative;
-  z-index: 2;
+}
+.toggle-menu input {
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 28px;
+  left: -7px;
+  cursor: pointer;
+  z-index: 3;
+}
+/* animation burger */
+.toggle-menu span:nth-child(2) {
+  transform-origin: 0 0;
+  transition: all 0.5s;
+}
+.toggle-menu input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-2px, -2px);
+  background-color: white;
+}
+.toggle-menu span:nth-child(4) {
+  transition: all 0.5s;
+  transform-origin: 0 100%;
+}
+.toggle-menu input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(0px, 0px);
+}
+.toggle-menu input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.toggle-menu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: rgb(227, 212, 221);
+  border-radius: 3px;
 }
 
-  nav {
-    margin: 25px 20px;
-    background-color: white;
-    display: flex;
-    color: white;
-    justify-content: space-around;
-    align-items: center;
-    border: black solid ;
-    border-radius: 10px;
-    box-shadow: 10px;
-    border-radius: 20px;
-
-
-  }
-  .logo img{
-    width: 50px;
-    padding: 50px;
-
-  }
+/* layar tbalet */
+@media screen and (max-width: 768px) {
   nav ul {
-    display: flex;
-    list-style: none;
-    width: 40%;
-    justify-content: space-between;
+    width: 50%;
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #51A8B1;
-    font-family: "Montserrat", sans-serif;
-    font-size: medium;
-    font-weight: bold;
-  }
-  nav ul li a:hover {
-    color: #0E646C;
-  }
-  
-  .toggle-menu {
-    display: none;
-    flex-direction: column;
-    height: 20px;
-    justify-content: space-between;
-    position: relative;
-  }
-  .toggle-menu input {
+}
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+  nav ul {
     position: absolute;
-    opacity: 0;
-    width: 50px;
-    height: 28px;
-    left: -7px;
-    cursor: pointer;
-    z-index: 3;
-  }
-  /* animation burger */
-  .toggle-menu span:nth-child(2) {
-    transform-origin: 0 0;
+    right: 0;
+    top: 0;
+    width: 70%;
+    flex-direction: column;
+    background-color: black;
+    justify-content: space-evenly;
+    height: 100vh;
+    align-items: center;
+    z-index: -1;
+    background-color: rgb(240, 12, 157);
+    transform: translateX(100%);
     transition: all 0.5s;
-  }
-  .toggle-menu input:checked ~ span:nth-child(2) {
-    transform: rotate(45deg) translate(-2px, -2px);
-    background-color: white;
-  }
-  .toggle-menu span:nth-child(4) {
-    transition: all 0.5s;
-    transform-origin: 0 100%;
-  }
-  .toggle-menu input:checked ~ span:nth-child(4) {
-    background-color: white;
-    transform: rotate(-45deg) translate(0px, 0px);
-  }
-  .toggle-menu input:checked ~ span:nth-child(3) {
     opacity: 0;
-    transform: scale(0);
   }
-  .toggle-menu span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: rgb(227, 212, 221);
-    border-radius: 3px;
+  .toggle-menu {
+    display: flex;
   }
-  
-  /* layar tbalet */
-  @media screen and (max-width: 768px) {
-    nav ul {
-      width: 50%;
-    }
+  nav ul.slide {
+    transform: translateX(0);
+    transition: all 0.5s;
+    opacity: 1;
   }
-  /* ukuran mobile */
-  @media screen and (max-width: 576px) {
-    nav ul {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 70%;
-      flex-direction: column;
-      background-color: black;
-      justify-content: space-evenly;
-      height: 100vh;
-      align-items: center;
-      z-index: -1;
-      background-color: white;
-      transform: translateX(100%);
-      transition: all 0.5s;
-      opacity: 0;
-    }
-    .toggle-menu {
-      display: flex;
-    }
-    nav ul.slide {
-      transform: translateX(0);
-      transition: all 0.5s;
-      opacity: 1;
-    }
-  }
+}
 
-  
+/* visi misi */
+/* From Uiverse.io by Fcodingx */ 
+.card {
+  width: 190px;
+  height: 120px;
+  padding: 0.5rem;
+  background: rgba(198, 198, 198, 0.34);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.440);
+  border-left: 2px  rgba(255, 255, 255, 0.545) outset;
+  box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+  transform: skewX(10deg);
+  transition: .4s;
+  overflow: hidden;
+  color: white;
+  margin-right: 5%;
+}
+
+.card:hover {
+  height: fit-content;
+  transform: skew(0deg);
+}
+
+.align {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-self: flex-start;
+}
+
+.red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff605c;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.yellow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffbd44;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00ca4e;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+}
+
+.card h1 {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  color: rgb(218, 244, 237);
+  text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
+  font-size: 3em;
+}
+
