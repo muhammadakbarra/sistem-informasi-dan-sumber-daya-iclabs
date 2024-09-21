@@ -17,7 +17,6 @@
 body {
   font-family: sans-serif;
   overflow-x: hidden;
-  /* background-color: black; */
 
 }
 
@@ -28,9 +27,8 @@ nav {
   color: #3fc9d5;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
   border-radius: 10px;
-  box-shadow: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -59,6 +57,8 @@ nav ul li a:hover {
 img {
   width: 50px;
   top: 50px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .toggle-menu {
@@ -146,3 +146,58 @@ img {
   }
 }
 
+.grad1 {
+  height: 523px;
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(81, 168, 177));
+}
+
+.nama1{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+#iclabs{
+  margin-bottom: 30px;
+  font-size:5rem
+}
+
+#keterangan{
+    font-size: 1rem;
+}
+
+.container2{
+  background-color: rgb(81, 168, 177);
+  height: 1000px;
+  /* border-radius: 00px 00px 500px 500px; */
+  border-radius: 00 00 100px 100px;
+}
+
+.hlm2{
+  position: absolute;
+  top: 600px;
+  margin: 90PX;
+  font-size: 18px;
+  color: white;
+}
+
+.hlm2 h1{
+  font-weight: 900;
+  font-size: 4rem;
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+
+.hlm2 p{
+  margin-left: 110px;
+  margin-bottom: 100px;
+  font-size: 20px;
+}
+
+.hlm2 ol{
+  margin-left: 130px;
+  font-size: 20px;
+}
