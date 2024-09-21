@@ -171,9 +171,10 @@ img {
 
 .container2{
   background-color: rgb(81, 168, 177);
-  height: 1000px;
-  /* border-radius: 00px 00px 500px 500px; */
-  border-radius: 00 00 100px 100px;
+  height: 700px;
+  border-bottom-left-radius: 100px; /* Menghasilkan efek lengkung di kiri bawah */
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hlm2{
@@ -200,4 +201,268 @@ img {
 .hlm2 ol{
   margin-left: 130px;
   font-size: 20px;
+}
+/* sarana prasarana */
+
+.sapa{
+  align-items: center;
+  margin-top: 100px;
+}
+.sapa h1{
+  color: rgb(81, 168, 177);
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+.sapa h2{
+  font-weight: 700px;
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+}
+.cards {
+  position: relative;
+  top: 100px;
+  margin-left: 200px;
+}
+
+.card {
+  /* z-index: 1; */
+  position: absolute;
+  width: 954px;
+  height: 290px;
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+}
+
+.card.one {
+  top: px; /* Mulai dari posisi paling atas */
+  left: 0px; /* Lurus ke depan */
+  background: linear-gradient(180deg, #FF0055 0%, #000066 100%);
+  display: flex;
+  align-items: center;
+}
+
+.card.two {
+  top: 20px; /* Sedikit turun */
+  left: 0px; /* Geser sedikit ke kanan */
+  background: linear-gradient(180deg, #fa00ff 0%, #01f998 99%);
+}
+
+.card.three {
+  top: 40px; /* Lebih turun lagi */
+  left: 0px; /* Geser sedikit lagi */
+  background: linear-gradient(180deg, #c0f901 0%, #fa00ff 100%);
+}
+
+.card:hover {
+  z-index: 4;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Hanya menggunakan perspective */
+  transition: all 0.5s ease-out;
+}
+
+.cardDetails {
+  width: 55%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+
+.card:hover .cardDetails {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.cardDetailsHaeder {
+  font-weight: 600;
+  color: #edb899;
+}
+
+/* cardslider */
+
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-tag {
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #ff7d7d;
+  right: 10px;
+  top: 10px;
+  text-transform: capitalize;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 90%;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.card:hover .card-btn {
+  opacity: 1;
+}
+
+.card-btn:hover {
+  background: #ff7d7d;
+  color: #fff;
+}
+
+.product-info {
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.namaCa {
+  text-transform: uppercase;
+}
+
+.product-short-description {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.actual-price {
+  margin-left: 20px;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+.collection-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.collection {
+  position: relative;
+}
+
+.collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  text-transform: capitalize;
+}
+
+.collection:nth-child(3) {
+  grid-column: span 2;
+  margin-bottom: 10px;
 }
