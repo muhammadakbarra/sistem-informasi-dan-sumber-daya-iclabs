@@ -54,7 +54,7 @@ nav ul li a:hover {
   color: #0E646C;
 }
 
-img {
+.logo img {
   width: 50px;
   top: 50px;
   margin-left: 20px;
@@ -221,49 +221,48 @@ img {
   text-align: center;
 }
 .cards {
-  position: relative;
   top: 100px;
-  margin-left: 200px;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
 }
 
-.card {
-  /* z-index: 1; */
-  position: absolute;
-  width: 954px;
-  height: 290px;
+.card1 {
+  z-index: 1;
+  width: 1000px;
+  height: 300px;
   border-radius: 10px;
   transition: all 0.5s ease-out;
   overflow: hidden;
 }
 
-.card.one {
-  top: px; /* Mulai dari posisi paling atas */
-  left: 0px; /* Lurus ke depan */
+.card1.one {
+  top: 400px; /* Lebih turun lagi */
+  left: 10px; /* Geser sedikit lagi */
   background: linear-gradient(180deg, #FF0055 0%, #000066 100%);
   display: flex;
-  align-items: center;
 }
 
-.card.two {
-  top: 20px; /* Sedikit turun */
-  left: 0px; /* Geser sedikit ke kanan */
+.card1.two {
+  top: 200px; /* Sedikit turun */
+  left: 10px; /* Geser sedikit ke kanan */
   background: linear-gradient(180deg, #fa00ff 0%, #01f998 99%);
 }
 
-.card.three {
-  top: 40px; /* Lebih turun lagi */
-  left: 0px; /* Geser sedikit lagi */
+.card1.three {
+  top: 400px; /* Lebih turun lagi */
+  left: 10px; /* Geser sedikit lagi */
   background: linear-gradient(180deg, #c0f901 0%, #fa00ff 100%);
 }
 
-.card:hover {
+.card1:hover {
   z-index: 4;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Hanya menggunakan perspective */
   transition: all 0.5s ease-out;
 }
 
 .cardDetails {
-  width: 55%;
+  width: 40%;
   height: 100%;
   padding: 20px;
   display: flex;
@@ -276,7 +275,7 @@ img {
   transform: perspective(2000px) rotateY(-90deg);
 }
 
-.card:hover .cardDetails {
+.card1:hover .cardDetails {
   transform: perspective(2000px) rotateY(0deg);
 }
 
@@ -285,20 +284,18 @@ img {
   color: #edb899;
 }
 
-/* cardslider */
-
-.product {
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
+.container3{
+  margin-top: 500px;
 }
 
-.product-category {
-  padding: 0 10vw;
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 40px;
-  text-transform: capitalize;
+/* card slider */
+.container3{
+  background-color: rgb(81, 168, 177);
+  margin-top: 100px;
+}
+.product {
+  position: relative;
+  padding: 20px;
 }
 
 .product-container {
@@ -332,17 +329,6 @@ img {
   object-fit: cover;
 }
 
-.discount-tag {
-  position: absolute;
-  background: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  color: #ff7d7d;
-  right: 10px;
-  top: 10px;
-  text-transform: capitalize;
-}
-
 .card-btn {
   position: absolute;
   bottom: 10px;
@@ -350,9 +336,7 @@ img {
   transform: translateX(-50%);
   padding: 10px;
   width: 90%;
-  text-transform: capitalize;
   border: none;
-  outline: none;
   background: #fff;
   border-radius: 5px;
   transition: 0.5s;
@@ -366,12 +350,10 @@ img {
 
 .card-btn:hover {
   background: #ff7d7d;
-  color: #fff;
 }
 
 .product-info {
   width: 100%;
-  height: 100px;
   padding-top: 10px;
 }
 
@@ -380,24 +362,8 @@ img {
 }
 
 .product-short-description {
-  width: 100%;
-  height: 20px;
-  line-height: 20px;
-  overflow: hidden;
   opacity: 0.5;
-  text-transform: capitalize;
   margin: 5px 0;
-}
-
-.price {
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.actual-price {
-  margin-left: 20px;
-  opacity: 0.5;
-  text-decoration: line-through;
 }
 
 .pre-btn,
@@ -434,35 +400,89 @@ img {
   opacity: 1;
 }
 
-.collection-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+.manajemen{
+  align-items: center;
 }
-
-.collection {
-  position: relative;
-}
-
-.collection img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collection p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.manajemen h1{
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
   text-align: center;
-  color: #fff;
-  font-size: 50px;
-  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.manajemen h2{
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+
 }
 
-.collection:nth-child(3) {
-  grid-column: span 2;
-  margin-bottom: 10px;
+/* informasi */
+
+.container4 {
+  min-height: 100vh;
+  width: 80%; 
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #009688;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dua kolom per baris */
+  grid-gap: 20px;
+  padding-top: 20px;
+  justify-content: center; /* Menjaga grid agar tetap di tengah */
+  margin: 0 auto; /* Memastikan grid berada di tengah secara horizontal */
+}
+
+.card4 {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 150px; /* Ukuran gambar tetap seperti yang diinginkan */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.text-placeholder {
+  height: 10px;
+  background-color: #bdbdbd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.line1 {
+  width: 90%;
+}
+
+.line2 {
+  width: 70%;
+}
+
+.line3 {
+  width: 50%;
 }
