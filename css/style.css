@@ -149,6 +149,7 @@ nav ul li a:hover {
 .grad1 {
   height: 523px;
   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(81, 168, 177));
+  
 }
 
 .nama1{
@@ -172,9 +173,11 @@ nav ul li a:hover {
 .container2{
   background-color: rgb(81, 168, 177);
   height: 700px;
-  border-bottom-left-radius: 100px; /* Menghasilkan efek lengkung di kiri bawah */
-  border-bottom-right-radius: 100px;
+  /* border-bottom-left-radius: 100px; /* Menghasilkan efek lengkung di kiri bawah */
+  /* border-bottom-right-radius: 100px; */ */
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform: scaleX(1.5);
 }
 
 .hlm2{
@@ -485,4 +488,133 @@ header p {
 
 .line3 {
   width: 50%;
+}
+/* footer */
+
+footer {
+  position: relative;
+  background-color: #006d66; /* Warna latar belakang */
+  padding: 80px 100px;
+  color: white;
+
+  /* Border-radius hanya untuk bagian atas */
+  border-top-left-radius: 50% 100px;   /* Radius atas kiri */
+  border-top-right-radius: 50% 100px;  /* Radius atas kanan */
+  
+  /* Bagian bawah tetap datar, tanpa radius */
+  z-index: 1;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  bottom: -100px; /* Posisi pseudo elemen di bagian bawah */
+  left: 0;
+  width: 1000%;
+  height: 200px; /* Sesuaikan dengan tinggi setengah lingkaran */
+  background-color: #006d66; /* Sama dengan warna latar belakang */
+  z-index: -1; /* Pastikan elemen pseudo berada di belakang konten */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Memastikan konten tetap di depan */
+}
+
+/* Logo and Social Icons */
+.footer-logo {
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  gap: 50px;
+}
+
+.link-column {
+  margin-right: 50px;
+}
+
+.link-column h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.link-column ul {
+  list-style-type: none;
+}
+
+.link-column ul li {
+  margin-bottom: 10px;
+}
+
+.link-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer-bottom a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+  }
 }
