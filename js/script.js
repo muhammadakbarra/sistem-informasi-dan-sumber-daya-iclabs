@@ -6,3 +6,6 @@ console.log(ul);
 check.addEventListener("click", function () {
   ul.classList.toggle("slide");
 });
+
+// management
+
