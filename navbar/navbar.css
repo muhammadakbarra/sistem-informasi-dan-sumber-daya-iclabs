@@ -1,0 +1,31 @@
+nav {
+    margin: 25px 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    color: rgb(227, 212, 221);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: inset -3px -3px 10px 3px #cacaca88;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #51A8B1;
+    font-family: "Montserrat", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+  
+  }
+  
+  nav ul li a:hover {
+    color : #0E646C;
+  }
+  
