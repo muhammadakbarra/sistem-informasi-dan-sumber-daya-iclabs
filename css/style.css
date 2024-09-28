@@ -169,47 +169,49 @@ nav ul li a:hover {
 #keterangan{
     font-size: 1rem;
 }
+/* visi misi */
 
 .container2{
+  position: relative;
   background-color: rgb(81, 168, 177);
   height: 700px;
-  /* border-bottom-left-radius: 100px; /* Menghasilkan efek lengkung di kiri bawah */
-  /* border-bottom-right-radius: 100px; */ */
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 50% 50%/0 0 100% 100%;
-  transform: scaleX(1.5);
+  border-radius: 0 0 100% 100%;
+  transform: scale(1.5);
+  z-index: -99;
 }
 
 .hlm2{
-  position: absolute;
-  top: 600px;
-  margin: 90PX;
   font-size: 18px;
   color: white;
+  z-index: 2;
+  margin-left: 200px;
+  padding-top: 200px;
 }
 
 .hlm2 h1{
+  padding-left: 100px;
   font-weight: 900;
-  font-size: 4rem;
   margin-bottom: 30px;
-  margin-left: 100px;
 }
 
 .hlm2 p{
-  margin-left: 110px;
   margin-bottom: 100px;
-  font-size: 20px;
+  font-size: 15px;
+  margin-left: 100px;
+
 }
 
 .hlm2 ol{
   margin-left: 130px;
-  font-size: 20px;
+  font-size: 15px;
 }
 /* sarana prasarana */
 
 .sapa{
   align-items: center;
-  margin-top: 100px;
+  margin-top: 250px;
+  margin-bottom: 50px;
 }
 .sapa h1{
   color: rgb(81, 168, 177);
@@ -223,78 +225,87 @@ nav ul li a:hover {
   font-size: 40px;
   text-align: center;
 }
-.cards {
-  top: 100px;
-  bottom: 100px;
+.flip-card-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center; /* Mengatur posisi di tengah */
 }
 
-.card1 {
-  z-index: 1;
-  width: 1000px;
-  height: 300px;
-  border-radius: 10px;
-  transition: all 0.5s ease-out;
-  overflow: hidden;
+.flip-card {
+  background-color: transparent;
+  width: 300px; /* Lebar kartu */
+  height: 150px; /* Tinggi kartu */
+  perspective: 1000px;
+  font-family: sans-serif;
+  margin: 10px; /* Jarak antar kartu */
 }
 
-.card1.one {
-  top: 400px; /* Lebih turun lagi */
-  left: 10px; /* Geser sedikit lagi */
-  background: linear-gradient(180deg, #FF0055 0%, #000066 100%);
-  display: flex;
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
 }
 
-.card1.two {
-  top: 200px; /* Sedikit turun */
-  left: 10px; /* Geser sedikit ke kanan */
-  background: linear-gradient(180deg, #fa00ff 0%, #01f998 99%);
-}
-
-.card1.three {
-  top: 400px; /* Lebih turun lagi */
-  left: 10px; /* Geser sedikit lagi */
-  background: linear-gradient(180deg, #c0f901 0%, #fa00ff 100%);
-}
-
-.card1:hover {
-  z-index: 4;
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Hanya menggunakan perspective */
-  transition: all 0.5s ease-out;
-}
-
-.cardDetails {
-  width: 40%;
+.flip-card-inner {
+  position: relative;
+  width: 100%;
   height: 100%;
-  padding: 20px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  background: rgba(0, 0, 0, 0.8);
-  transition: 0.5s;
-  transform-origin: left;
-  transform: perspective(2000px) rotateY(-90deg);
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(81, 168, 177);
+  border-radius: 1rem;
 }
 
-.card1:hover .cardDetails {
-  transform: perspective(2000px) rotateY(0deg);
+.flip-card-front {
+  background: none; /* Menghapus background untuk gambar */
 }
 
-.cardDetailsHaeder {
-  font-weight: 600;
-  color: #edb899;
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(81, 168, 177) 30%, rgb(81, 168, 177) 88%, rgb(81, 168, 177) 40%, rgb(81, 168, 177) 78%);
+  color: white;
+  transform: rotateY(180deg);
 }
 
-.container3{
-  margin-top: 500px;
+/* Style untuk gambar */
+.card-image {
+  width: 100%; /* Gambar akan memenuhi lebar kartu */
+  height: 100%; /* Gambar akan memenuhi tinggi kartu */
+  object-fit: cover; /* Gambar akan menyesuaikan ukuran kartu tanpa distorsi */
+  border-radius: 1rem; /* Agar gambar mengikuti bentuk border kartu */
 }
+
+/* Mengatur responsif untuk memastikan selalu ada 3 kartu per baris */
+@media (min-width: 900px) {
+  .flip-card {
+    flex: 1 0 calc(33.33% - 20px); /* Lebar kartu agar ada 3 per baris */
+  }
+}
+
 
 /* card slider */
 .container3{
   background-color: rgb(81, 168, 177);
   margin-top: 100px;
+  margin-bottom: 50px;
+  
 }
 .product {
   position: relative;
@@ -411,7 +422,7 @@ nav ul li a:hover {
   font-weight: 900;
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 10px;
+  
 }
 .manajemen h2{
   font-size: 40px;
@@ -424,7 +435,7 @@ nav ul li a:hover {
 
 .container4 {
   min-height: 100vh;
-  width: 80%; 
+  /* width: 80%;  */
   padding: 20px;
 }
 
@@ -473,7 +484,6 @@ header p {
 
 .text-placeholder {
   height: 10px;
-  background-color: #bdbdbd;
   border-radius: 4px;
   margin-bottom: 8px;
 }
@@ -489,63 +499,72 @@ header p {
 .line3 {
   width: 50%;
 }
+
+
 /* footer */
-
 footer {
+  background-color: #006d66;
+  margin-top: 100px;
+  border-radius: 100% 100% 0 0;
+  transform: scale(1.5);
   position: relative;
-  background-color: #006d66; /* Warna latar belakang */
-  padding: 80px 100px;
   color: white;
-
-  /* Border-radius hanya untuk bagian atas */
-  border-top-left-radius: 50% 100px;   /* Radius atas kiri */
-  border-top-right-radius: 50% 100px;  /* Radius atas kanan */
-  
-  /* Bagian bawah tetap datar, tanpa radius */
+  overflow: hidden;
   z-index: 1;
 }
 
 footer::before {
   content: "";
   position: absolute;
-  bottom: -100px; /* Posisi pseudo elemen di bagian bawah */
+  bottom: -80px;
   left: 0;
-  width: 1000%;
-  height: 200px; /* Sesuaikan dengan tinggi setengah lingkaran */
-  background-color: #006d66; /* Sama dengan warna latar belakang */
-  z-index: -1; /* Pastikan elemen pseudo berada di belakang konten */
+  width: 200%;
+  height: 150px;
+  background-color: #006d66;
+  z-index: -1;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1; /* Memastikan konten tetap di depan */
+  text-align: left;
 }
 
-/* Logo and Social Icons */
+.logo-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .footer-logo {
-  max-width: 80px;
+  max-width: 150px; 
   margin-bottom: 20px;
 }
 
 .social-icons {
   display: flex;
-  gap: 10px;
+  justify-content: center;
 }
 
 .social-icons img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;   
 }
 
-/* Footer Links */
+.social-icons img:last-child {
+  margin-right: 0; 
+}
+
 .footer-links {
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .link-column {
@@ -554,12 +573,13 @@ footer::before {
 
 .link-column h4 {
   margin-bottom: 15px;
-  font-size: 18px;
-  color: #ffffff;
+  font-size: 16px;
+  color: white;
 }
 
 .link-column ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .link-column ul li {
@@ -567,32 +587,30 @@ footer::before {
 }
 
 .link-column ul li a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .link-column ul li a:hover {
   text-decoration: underline;
 }
 
-/* Footer Bottom */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-bottom p {
-  font-size: 14px;
-  color: #ffffff;
+  margin: 0;
 }
 
 .footer-bottom a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
 }
 
@@ -600,21 +618,25 @@ footer::before {
   text-decoration: underline;
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .footer-links {
-      flex-direction: column;
-      gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-column {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .footer-bottom {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    text-align: center;
   }
 }
